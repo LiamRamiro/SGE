@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="Shinra_action" model="ir.actions.act_window">
+        <field name="name">Shinra</field>
+        <field name="res_model">fantasy.shinra</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="Shinra_tree" model="ir.ui.view">
+        <field name="name">Shinra.tree</field>
+        <field name="model">fantasy.shinra</field>
+        <field name="arch" type="xml">
+            <tree string="Shinra">
+                <field name="name"/>
+                <field name="fecha_nacimiento"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Shinra_form" model="ir.ui.view">
+        <field name="name">Shinra.form</field>
+        <field name="model">fantasy.shinra</field>
+        <field name="arch" type="xml">
+            <form string="Shinra">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fecha_nacimiento"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Shinra_calendar" model="ir.ui.view">
+        <field name="name">Shinra.calendar</field>
+        <field name="model">fantasy.shinra</field>
+        <field name="arch" type="xml">
+            <calendar string="Shinra">
+                <field name="name"/>
+                <field name="fecha_nacimiento"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="Turcos_action" model="ir.actions.act_window">
+        <field name="name">Turcos</field>
+        <field name="res_model">fantasy.turcos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="Turcos_tree" model="ir.ui.view">
+        <field name="name">Turcos.tree</field>
+        <field name="model">fantasy.turcos</field>
+        <field name="arch" type="xml">
+            <tree string="Turcos">
+                <field name="name"/>
+                <field name="fecha_nacimiento"/>
+                <field name="rango"/>
+                <field name="avalancha_id"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="Turcos_form" model="ir.ui.view">
+        <field name="name">Turcos.form</field>
+        <field name="model">fantasy.turcos</field>
+        <field name="arch" type="xml">
+            <form string="Turcos">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fecha_nacimiento"/>
+                        <field name="rango"/>
+                        <field name="avalancha_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Soldado_action" model="ir.actions.act_window">
+        <field name="name">Soldado</field>
+        <field name="res_model">fantasy.soldado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="Soldado_tree" model="ir.ui.view">
+        <field name="name">Soldado.tree</field>
+        <field name="model">fantasy.soldado</field>
+        <field name="arch" type="xml">
+            <tree string="Soldado">
+                <field name="name"/>
+                <field name="fecha_nacimiento"/>
+                <field name="arma_especial"/>
+                <field name="clase"/>
+                <field name="indice_locura"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Soldado_form" model="ir.ui.view">
+        <field name="name">Soldado.form</field>
+        <field name="model">fantasy.soldado</field>
+        <field name="arch" type="xml">
+            <form string="Soldado">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fecha_nacimiento"/>
+                        <field name="arma_especial"/>
+                        <field name="clase"/>
+                        <field name="indice_locura"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Armas_action" model="ir.actions.act_window">
+        <field name="name">Armas</field>
+        <field name="res_model">fantasy.armas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="Armas_tree" model="ir.ui.view">
+        <field name="name">Armas.tree</field>
+        <field name="model">fantasy.armas</field>
+        <field name="arch" type="xml">
+            <tree string="Armas">
+                <field name="name"/>
+                <field name="material_fabricacion"/>
+                <field name="ranuras"/>
+                <field name="materias_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Armas_form" model="ir.ui.view">
+        <field name="name">Armas.form</field>
+        <field name="model">fantasy.armas</field>
+        <field name="arch" type="xml">
+            <form string="Armas">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="material_fabricacion"/>
+                        <field name="ranuras"/>
+                        <field name="materias_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Materias_action" model="ir.actions.act_window">
+        <field name="name">Materias</field>
+        <field name="res_model">fantasy.materias</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="Materias_tree" model="ir.ui.view">
+        <field name="name">Materias.tree</field>
+        <field name="model">fantasy.materias</field>
+        <field name="arch" type="xml">
+            <tree string="Materias">
+                <field name="name"/>
+                <field name="tipo"/>
+                <field name="ranuras"/>
+                <field name="armas_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Materias_form" model="ir.ui.view">
+        <field name="name">Materias.form</field>
+        <field name="model">fantasy.materias</field>
+        <field name="arch" type="xml">
+            <form string="Materias">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="tipo"/>
+                        <field name="ranuras"/>
+                        <field name="armas_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Avalancha_action" model="ir.actions.act_window">
+        <field name="name">Avalancha</field>
+        <field name="res_model">fantasy.avalancha</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="Avalancha_tree" model="ir.ui.view">
+        <field name="name">Avalancha.tree</field>
+        <field name="model">fantasy.avalancha</field>
+        <field name="arch" type="xml">
+            <tree string="Avalancha">
+                <field name="name"/>
+                <field name="arma_especial"/>
+                <field name="antiguo_soldado"/>
+                <field name="misiones"/>
+                <field name="reserva"/>
+                <field name="fecha_entrada_reserva"/>
+                <field name="turcos_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Avalancha_form" model="ir.ui.view">
+        <field name="name">Avalancha.form</field>
+        <field name="model">fantasy.avalancha</field>
+        <field name="arch" type="xml">
+            <form string="Avalancha">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="arma_especial"/>
+                        <field name="antiguo_soldado"/>
+                        <field name="misiones"/>
+                        <field name="reserva"/>
+                        <field name="fecha_entrada_reserva"/>
+                        <field name="turcos_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Avalancha_calendar" model="ir.ui.view">
+        <field name="name">Avalancha.calendar</field>
+        <field name="model">fantasy.avalancha</field>
+        <field name="arch" type="xml">
+            <calendar string="Avalancha">
+                <field name="name"/>
+                <field name="arma_especial"/>
+                <field name="antiguo_soldado"/>
+                <field name="misiones"/>
+                <field name="reserva"/>
+                <field name="fecha_entrada_reserva"/>
+                <field name="turcos_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <menuitem 
+        id="final_fantasy"
+        name="Final Fantasy"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="Shinra"
+        name="Shinra"
+        action="Shinra_action"
+        parent="final_fantasy"
+    />
+
+    <menuitem 
+        id="Turcos"
+        name="Turcos"
+        action="Turcos_action"
+        parent="final_fantasy"
+    />
+
+    <menuitem 
+        id="Soldado"
+        name="Soldado"
+        action="Soldado_action"
+        parent="final_fantasy"
+    />
+
+    <menuitem 
+        id="Armas"
+        name="Armas"
+        action="Armas_action"
+        parent="final_fantasy"
+    />
+
+    <menuitem 
+        id="Materias"
+        name="Materias"
+        action="Materias_action"
+        parent="final_fantasy"
+    />
+
+    <menuitem 
+        id="Avalancha"
+        name="Avalancha"
+        action="Avalancha_action"
+        parent="final_fantasy"
+    />
+    
+
+</odoo>

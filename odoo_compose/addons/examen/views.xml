@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="cerveza_action" model="ir.actions.act_window">
+        <field name="name">Cerveza</field>
+        <field name="res_model">examen.cerveza</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="cerveza_tree" model="ir.ui.view">
+        <field name="name">Cerveza_tree</field>
+        <field name="model">examen.cerveza</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="tipo"/>
+                <field name="nombre"/>
+                <field name="descripcion"/>
+                <field name="contenido_alcohol"/>
+                <field name="precio_unidad"/>
+                <field name="volumen_unidad"/>
+                <field name="disponible"/>
+                <field name="lote_produccion_id"/>
+                <field name="ingrediente_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cerveza_form" model="ir.ui.view">
+        <field name="name">Cerveza_form</field>
+        <field name="model">examen.cerveza</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="tipo"/>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="contenido_alcohol"/>
+                        <field name="precio_unidad"/>
+                        <field name="volumen_unidad"/>
+                        <field name="disponible"/>
+                        <field name="lote_produccion_id"/>
+                        <field name="ingrediente_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="lote_produccion_action" model="ir.actions.act_window">
+        <field name="name">Lote de Produccion</field>
+        <field name="res_model">examen.lote_produccion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="lote_produccion_tree" model="ir.ui.view">
+        <field name="name">lote_produccion_tree</field>
+        <field name="model">examen.lote_produccion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="fecha_inicio"/>
+                <field name="fecha_finalizacion"/>
+                <field name="cantidad_producida"/>
+                <field name="estado"/>
+                <field name="cerveza_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="lote_produccion_form" model="ir.ui.view">
+        <field name="name">lote_produccion_form</field>
+        <field name="model">examen.lote_produccion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_finalizacion"/>
+                        <field name="cantidad_producida"/>
+                        <field name="estado"/>
+                        <field name="cerveza_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ingrediente_action" model="ir.actions.act_window">
+        <field name="name">Ingrediente</field>
+        <field name="res_model">examen.ingrediente</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ingrediente_tree" model="ir.ui.view">
+        <field name="name">ingrediente_tree</field>
+        <field name="model">examen.ingrediente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="tipo"/>
+                <field name="cantidad_disponible"/>
+                <field name="cerveza_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ingrediente_form" model="ir.ui.view">
+        <field name="name">ingrediente_form</field>
+        <field name="model">examen.ingrediente</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="tipo"/>
+                        <field name="cantidad_disponible"/>
+                        <field name="cerveza_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="empaquetado_action" model="ir.actions.act_window">
+        <field name="name">Empaquetado</field>
+        <field name="res_model">examen.empaquetado</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <record id="empaquetado_tree" model="ir.ui.view">
+        <field name="name">empaquetado_tree</field>
+        <field name="model">examen.empaquetado</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="lote_produccion_id"/>
+                <field name="fecha_empaquetado"/>
+                <field name="cantidad_empaquetada"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="empaquetado_form" model="ir.ui.view">
+        <field name="name">empaquetado_form</field>
+        <field name="model">examen.empaquetado</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="lote_produccion_id"/>
+                        <field name="fecha_empaquetado"/>
+                        <field name="cantidad_empaquetada"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="empaquetado_calendar" model="ir.ui.view">
+        <field name="name">empaquetado_calendar</field>
+        <field name="model">examen.empaquetado</field>
+        <field name="arch" type="xml">
+            <calendar>
+                <field name="lote_produccion_id"/>
+                <field name="fecha_empaquetado"/>
+                <field name="cantidad_empaquetada"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="distribuidor_action" model="ir.actions.act_window">
+        <field name="name">Distribuidor</field>
+        <field name="res_model">examen.distribuidor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="distribuidor_tree" model="ir.ui.view">
+        <field name="name">distribuidor_tree</field>
+        <field name="model">examen.distribuidor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="direccion"/>
+                <field name="telefono_contacto"/>
+                <field name="cerveza_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="distribuidor_form" model="ir.ui.view">
+        <field name="name">distribuidor_form</field>
+        <field name="model">examen.distribuidor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="direccion"/>
+                        <field name="telefono_contacto"/>
+                        <field name="cerveza_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <menuitem 
+        id="examen"
+        name="Examen"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="cerveza_menu"
+        name="Cerveza"
+        action="cerveza_action"
+        parent="examen"
+    />
+
+    <menuitem 
+        id="lote_produccion_menu"
+        name="Lote de Produccion"
+        action="lote_produccion_action"
+        parent="examen"
+    />
+
+    <menuitem 
+        id="ingrediente_menu"
+        name="Ingrediente"
+        action="ingrediente_action"
+        parent="examen"
+    />
+
+    <menuitem 
+        id="empaquetado_menu"
+        name="Empaquetado"
+        action="empaquetado_action"
+        parent="examen"
+    />
+
+    <menuitem 
+        id="distribuidor_menu"
+        name="Distribuidor"
+        action="distribuidor_action"
+        parent="examen"
+    />
+
+</odoo>

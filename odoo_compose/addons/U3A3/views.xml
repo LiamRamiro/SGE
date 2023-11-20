@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="equipo_action" model="ir.actions.act_window">
+        <field name="name">Equipo</field>
+        <field name="res_model">liga.equipo</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <record id="equipo_tree" model="ir.ui.view">
+        <field name="name">equipo.tree</field>
+        <field name="model">liga.equipo</field>
+        <field name="arch" type="xml">
+            <tree string="Equipos">
+                <field name="nombre"/>
+                <field name="fecha_fundacion"/>
+                <field name="liga"/>
+                <field name="entrenador"/>
+                <field name="jugador_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="equipo_form" model="ir.ui.view">
+        <field name="name">equipo.form</field>
+        <field name="model">liga.equipo</field>
+        <field name="arch" type="xml">
+            <form string="Equipos">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="fecha_fundacion"/>
+                        <field name="liga"/>
+                        <field name="entrenador"/>
+                        <field name="jugador_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="jugador_action" model="ir.actions.act_window">
+        <field name="name">Jugador</field>
+        <field name="res_model">liga.jugador</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="jugador_tree" model="ir.ui.view">
+        <field name="name">jugador.tree</field>
+        <field name="model">liga.jugador</field>
+        <field name="arch" type="xml">
+            <tree string="Jugadores">
+                <field name="nombreEntidad"/>
+                <field name="nombre"/>
+                <field name="edad"/>
+                <field name="posicion"/>
+                <field name="equipo_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="jugador_form" model="ir.ui.view">
+        <field name="name">jugador.form</field>
+        <field name="model">liga.jugador</field>
+        <field name="arch" type="xml">
+            <form string="Jugadores">
+                <sheet>
+                    <group>
+                        <field name="nombreEntidad"/>
+                        <field name="nombre"/>
+                        <field name="edad"/>
+                        <field name="posicion"/>
+                        <field name="equipo_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <menuitem 
+        id="liga pro"
+        name="Liga"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="equipo_menu"
+        name="Equipos"
+        action="equipo_action"
+        parent="liga"
+    />
+
+    <menuitem 
+        id="jugador_menu"
+        name="Jugadores"
+        action="jugador_action"
+        parent="liga"
+    />
+    
+
+</odoo>
