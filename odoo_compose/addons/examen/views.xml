@@ -48,10 +48,30 @@
         </field>
     </record>
 
+    <record id="disponibilidad_filtro" model="ir.ui.view">
+        <field name="name">Disponiblidad_filtro</field>
+        <field name="model">examen.cerveza</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="tipo"/>
+                <field name="nombre" />
+                <field name="descripcion" />
+                <field name="contenido_alcohol" />
+                <field name="precio_unidad" />
+                <field name="volumen_unidad" />
+                <field name="lote_produccion_id" />
+                <field name="ingrediente_id" />
+                <field name="distribuidor_id" />
+                <filter name="disponible" string="Disponible" domain="[('disponible','=',True)]"/>
+                <filter name="agotado" string="Agotado" domain="[('disponible','=',False)]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="lote_produccion_action" model="ir.actions.act_window">
         <field name="name">Lote de Produccion</field>
         <field name="res_model">examen.lote_produccion</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
     </record>
 
     <record id="lote_produccion_tree" model="ir.ui.view">
@@ -85,6 +105,18 @@
             </form>
         </field>
     </record>
+
+    <record id="lote_produccion_calendar" model="ir.ui.view">
+        <field name="name">lote_produccion_calendar</field>
+        <field name="model">examen.lote_produccion</field>
+        <field name="arch" type="xml">
+            <calendar date_start="fecha_inicio" date_stop="fecha_finalizacion">
+                <field name="cerveza_id"/>
+                
+            </calendar>
+        </field>
+    </record>
+
 
     <record id="ingrediente_action" model="ir.actions.act_window">
         <field name="name">Ingrediente</field>
@@ -160,7 +192,7 @@
         <field name="name">empaquetado_calendar</field>
         <field name="model">examen.empaquetado</field>
         <field name="arch" type="xml">
-            <calendar>
+            <calendar date_start="fecha_empaquetado">
                 <field name="lote_produccion_id"/>
                 <field name="fecha_empaquetado"/>
                 <field name="cantidad_empaquetada"/>

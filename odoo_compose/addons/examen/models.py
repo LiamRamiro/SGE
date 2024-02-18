@@ -9,10 +9,10 @@ class Cerveza(models.Model):
     contenido_alcohol = fields.Float(string='Contenido de alcohol (%)')
     precio_unidad = fields.Float(string='Precio por unidad')
     volumen_unidad = fields.Float(string='Volumen por unidad (ml)')
-    disponible = fields.Boolean(string='Disponible')
     lote_produccion_id = fields.One2many(comodel_name='examen.lote_produccion', inverse_name='cerveza_id')
     ingrediente_id = fields.One2many(comodel_name='examen.ingrediente', inverse_name='cerveza_id')
     distribuidor_id = fields.Many2many(comodel_name='examen.distribuidor', inverse_name='cerveza_id')
+    disponible = fields.Boolean(string='Disponible')
 
 
 class LoteProduccion(models.Model):
@@ -27,7 +27,7 @@ class LoteProduccion(models.Model):
         ('en espera de empaquetado', 'En Espera de Empaquetado')],
         string='Estado')
     cerveza_id = fields.Many2one(comodel_name='examen.cerveza', inverse_name='lote_produccion_id')
-    empaquetado_id = fields.Many2many(comodel_name='examen.empaquetado', inverse_name='lote_produccion_id')
+    empaquetado_id = fields.One2many(comodel_name='examen.empaquetado', inverse_name='lote_produccion_id')
 
 class Ingrediente(models.Model):
     _name = 'examen.ingrediente'
@@ -42,12 +42,12 @@ class Ingrediente(models.Model):
         string='Tipo'
     )
     cantidad_disponible = fields.Float(string='Cantidad Disponible (kg/l)')
-    cerveza_id = fields.Many2one(comodel_name='examen.cerveza', inverse_name='ingrediente_id')
+    cerveza_id = fields.Many2many(comodel_name='examen.cerveza', inverse_name='ingrediente_id')
 
 class Empaquetado(models.Model):
     _name = 'examen.empaquetado'
     _description = 'Empaquetado'
-    lote_produccion_id = fields.Many2many(comodel_name='examen.lote_produccion', inverse_name='empaquetado_id')
+    lote_produccion_id = fields.Many2one(comodel_name='examen.lote_produccion', inverse_name='empaquetado_id')
     fecha_empaquetado = fields.Date(string='Fecha de Empaquetado')
     cantidad_empaquetada = fields.Integer(string='Cantidad Empaquetada')
 
